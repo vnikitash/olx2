@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+    \Illuminate\Support\Facades\App::setLocale('en');
+    __('passwords.reset');
+die("ends");
+    die();
     return view('welcome');
 });
 
