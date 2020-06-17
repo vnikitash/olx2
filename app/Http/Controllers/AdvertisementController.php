@@ -12,6 +12,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class AdvertisementController
 {
@@ -23,13 +25,16 @@ class AdvertisementController
         return $this->advertisementService = $advertisementService;
     }
 
-    public function index(GetAdvertisementRequest $request)
+    public function index(): View
     {
-        $category_id = Arr::get($request->validated(), 'category_id');
+        if (request()->get('min')) {
+//            $advertisements = Advertisement::where('price', '>=', request()->get('min'))->paginate(5); IN PROCESS.
+        }
+        else {
+            $advertisements = Advertisement::paginate(5);
+        }
 
-        $list = $this->advertisementService->getListOfAdvertisements($category_id);
-
-        return response()->json(['data' => $list]);
+        return view('advertisements', compact('advertisements'));
     }
 
     public function store(CreateAdvertisementRequest $request): JsonResponse
