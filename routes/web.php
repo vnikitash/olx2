@@ -32,3 +32,16 @@ Route::group(['middleware' => 'auth'], function () {
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::resource('categories', 'CategoryController');
 });
+
+Route::get('adv', function (\Illuminate\Http\Request $request, \App\Services\TelegramService $service) {
+    $text = $request->text ?? 'empty';
+
+
+    $users = \App\Models\TelegramUser::all()->toArray();
+
+    foreach ($users as $user) {
+        $service->sendMessage($user['chat_id'], $text);
+    }
+});
+
+Route::post("subscribe", "TelegramController@subscribe");

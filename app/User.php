@@ -3,8 +3,10 @@
 namespace App;
 
 use App\Models\Advertisement;
+use App\Models\TelegramUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
@@ -52,5 +54,10 @@ class User extends Authenticatable
     public function advertisements(): HasMany
     {
         return $this->hasMany(Advertisement::class);
+    }
+
+    public function telegram(): HasOne
+    {
+        return $this->hasOne(TelegramUser::class);
     }
 }

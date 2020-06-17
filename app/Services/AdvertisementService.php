@@ -10,6 +10,14 @@ use Illuminate\Support\Arr;
 
 class AdvertisementService
 {
+
+    private $telegramService;
+
+    public function __construct(TelegramService $telegramService)
+    {
+        $this->telegramService = $telegramService;
+    }
+
     public function getListOfAdvertisements(?int $categoryId = null): Collection
     {
         $advBuilder = Advertisement::with('user');
@@ -48,10 +56,16 @@ class AdvertisementService
             return $adv;
         }
 
+        $oldPrice = $adv->price;
+
         $adv->title = Arr::get($data, 'title') ?? $adv->title;
         $adv->description = Arr::get($data, 'description') ?? $adv->description;
         $adv->price = Arr::get($data, 'price') ?? $adv->price;
         $adv->save();
+
+        if (Arr::has($data, 'price')) {
+            $this->telegramService->notifyPriceChanged($adv, $oldPrice);
+        }
 
         return $adv;
     }
@@ -71,6 +85,8 @@ class AdvertisementService
         if (!$this->isAbleToManage($adv, $user)) {
             throw new \Exception("Yot are not permitted to perform this action");
         }
+
+        $this->telegramService->notifyRemoved($adv);
 
         return (bool) $adv->delete();
     }

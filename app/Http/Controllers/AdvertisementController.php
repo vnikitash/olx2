@@ -30,13 +30,17 @@ class AdvertisementController
 
         $advertisementsBuilder = Advertisement::query();
 
+        $user = $request->user()->load('telegram');
+
+        $chatId = $user->telegram->chat_id ?? null;
+
         if ($request->has('min')) {
             $advertisementsBuilder->where('price', '>', $request->min);
         }
 
         $advertisements = $advertisementsBuilder->paginate(5);
 
-        return view('advertisements', compact('advertisements'));
+        return view('advertisements', compact(['advertisements', 'chatId']));
     }
 
     public function store(CreateAdvertisementRequest $request): JsonResponse
