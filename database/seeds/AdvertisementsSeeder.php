@@ -11,14 +11,6 @@ class AdvertisementsSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i < 100; $i++) {
-            DB::table('advertisements')->insert([
-                'title' => 'test',
-                'description' => 'testing',
-                'price' => '55.55',
-                'category_id' => '1',
-                'user_id' => '1',
-            ]);
-        }
+        factory(\App\Models\Advertisement::class, 100)->create();
     }
 }

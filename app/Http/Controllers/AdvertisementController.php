@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class AdvertisementController
 {
@@ -24,9 +25,15 @@ class AdvertisementController
         return $this->advertisementService = $advertisementService;
     }
 
-    public function index()
+    public function index(): View
     {
-        $advertisements = Advertisement::paginate(5);
+        if (request()->get('min')) {
+//            $advertisements = Advertisement::where('price', '>=', request()->get('min'))->paginate(5); IN PROCESS.
+        }
+        else {
+            $advertisements = Advertisement::paginate(5);
+        }
+
         return view('advertisements', compact('advertisements'));
     }
 

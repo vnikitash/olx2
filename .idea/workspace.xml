@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2480244e-1f3a-4f32-b00b-7d86d71751e0" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/database/factories/AdvertisementsFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertisementController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/AdvertisementsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdvertisementsSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/advertisements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/advertisements.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/supervisord.log" beforeDir="false" afterPath="$PROJECT_DIR$/supervisord.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/supervisord.log" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +203,7 @@
       <workItem from="1591978939007" duration="7031000" />
       <workItem from="1592292016206" duration="21045000" />
       <workItem from="1592331090555" duration="26000" />
-      <workItem from="1592377661262" duration="1597000" />
+      <workItem from="1592377661262" duration="8279000" />
     </task>
     <servers />
   </component>
@@ -228,9 +230,14 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="675" y="355" width="559" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1592301034043" />
-    <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1592317482378">
-      <screen x="0" y="27" width="1920" height="1053" />
+    <state x="701" y="274" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592387832640">
+      <screen x="128" y="0" width="1680" height="1050" />
     </state>
+    <state x="701" y="274" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.1050.1920.1080/128.0.1680.1050@128.0.1680.1050" timestamp="1592387832640" />
+    <state x="727" y="439" width="491" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1592387258416">
+      <screen x="128" y="0" width="1680" height="1050" />
+    </state>
+    <state x="727" y="439" width="491" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.1050.1920.1080/128.0.1680.1050@128.0.1680.1050" timestamp="1592387258416" />
     <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1592317482378" />
   </component>
 </project>
