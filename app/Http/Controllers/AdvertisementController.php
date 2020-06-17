@@ -25,14 +25,16 @@ class AdvertisementController
         return $this->advertisementService = $advertisementService;
     }
 
-    public function index(): View
+    public function index(Request $request): View
     {
-        if (request()->get('min')) {
-//            $advertisements = Advertisement::where('price', '>=', request()->get('min'))->paginate(5); IN PROCESS.
+
+        $advertisementsBuilder = Advertisement::query();
+
+        if ($request->has('min')) {
+            $advertisementsBuilder->where('price', '>', $request->min);
         }
-        else {
-            $advertisements = Advertisement::paginate(5);
-        }
+
+        $advertisements = $advertisementsBuilder->paginate(5);
 
         return view('advertisements', compact('advertisements'));
     }
