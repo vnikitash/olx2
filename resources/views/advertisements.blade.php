@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-<table class="table table-dark">
+<table class="table table-dark advertisements_table">
     <thead>
     <tr>
         <th scope="col">id</th>

@@ -20,17 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2480244e-1f3a-4f32-b00b-7d86d71751e0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/AdvertisementsSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/CategoriesSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/UserSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/advertisements.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/olx2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/olx2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdvertisementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdvertisementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/AdvertisementService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/AdvertisementService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/AdvertisementsSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/AdvertisementsSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/advertisements.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/advertisements.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/supervisord.log" beforeDir="false" afterPath="$PROJECT_DIR$/supervisord.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,12 +179,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Http/Requests/Advertisement" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Requests/Advertisement" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/css" />
+      <recent name="$PROJECT_DIR$/app/Http/Requests/Advertisement" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -206,7 +199,9 @@
       <option name="presentableId" value="Default" />
       <updated>1591978937841</updated>
       <workItem from="1591978939007" duration="7031000" />
-      <workItem from="1592292016206" duration="19365000" />
+      <workItem from="1592292016206" duration="21045000" />
+      <workItem from="1592331090555" duration="26000" />
+      <workItem from="1592377661262" duration="1597000" />
     </task>
     <servers />
   </component>
@@ -223,6 +218,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

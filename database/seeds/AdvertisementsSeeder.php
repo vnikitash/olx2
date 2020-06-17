@@ -11,12 +11,14 @@ class AdvertisementsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('advertisements')->insert([
-            'title' => 'test',
-            'description' => 'testing',
-            'price' => '55.55',
-            'category_id' => '1',
-            'user_id' => '1',
-        ]);
+        for ($i=0; $i < 100; $i++) {
+            DB::table('advertisements')->insert([
+                'title' => 'test',
+                'description' => 'testing',
+                'price' => '55.55',
+                'category_id' => '1',
+                'user_id' => '1',
+            ]);
+        }
     }
 }
