@@ -26,7 +26,7 @@ class Advertisement extends Model
 {
 
     public $hidden = [
-        'updated_at', 'user_id'
+        'updated_at'
     ];
 
     public function user(): BelongsTo

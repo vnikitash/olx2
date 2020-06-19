@@ -13,6 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('a', function (\Illuminate\Http\Request $request) {
+    $advertisements = \App\Models\Advertisement::query()->get()->toArray();
+
+    $adIds = array_map(function ($row) {
+        return $row['id'];
+    }, $advertisements);
+
+    //
+    $s = \App\Models\AdvertisementUserSubscription::query()
+        ->whereIn('advertisement_id', $adIds)
+        ->where('user_id', $request->user()->id)
+        ->get()
+        ->toArray();
+
+    $tmp = [];
+
+    foreach ($s as $row) {
+        $tmp[$row['advertisement_id']] = $row['user_id'];
+    }
+
+    foreach ($advertisements as &$advertisement) {
+        if (array_key_exists($advertisement['id'], $tmp)) {
+            $advertisement['subscribed'] = true;
+            continue;
+        }
+
+        $advertisement['subscribed'] = false;
+    }
+
+    dd($advertisements);
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 });

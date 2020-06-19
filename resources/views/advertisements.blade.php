@@ -26,7 +26,6 @@
     <div class="container">
 
 
-
     <table class="table table-dark advertisements_table">
         <thead>
         <tr>
@@ -57,7 +56,11 @@
                     <td><button class="btn btn-warning" onclick="showSendMessageModal({{$advertisement->id}})">Send message</button></td>
                 @endif
                 @if ($chatId)
+                    @if ($advertisement->subscriptions->isEmpty())
                     <td><button class="btn btn-success" onclick="sendSubscribeRequest({{$chatId}}, {{$advertisement->id}})">Subscribe</button></td>
+                        @else
+                        <td><button class="btn btn-danger">Unsubscribe</button></td>
+                        @endif
                 @endIf
             </tr>
         @endforeach

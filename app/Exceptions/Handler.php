@@ -50,7 +50,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        //dd($exception->getMessage());
+
+        if ($exception instanceof UserDidNotSpecifyCredentialsException) {
+            //here i will see AuthExceptions
+            return response()->json(['error' => 'true', 'message' => $exception->getMessage()], $exception->getCode());
+        }
+
         return parent::render($request, $exception);
     }
 }

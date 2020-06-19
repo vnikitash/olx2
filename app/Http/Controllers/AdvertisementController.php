@@ -28,7 +28,22 @@ class AdvertisementController
     public function index(Request $request): View
     {
 
-        $advertisementsBuilder = Advertisement::query();
+        $user = $request->user();
+
+
+
+        $orders = Orders::with(['order_items' => function ($query) {
+            return $query->where('product_id', 1);
+        }])->get();
+
+
+        $filtered = $orders->filter(function ($row) {
+            return !$row->isEmpty();
+        });
+
+        $advertisementsBuilder = Advertisement::with(['subscriptions' => function ($query) use ($user) {
+            return $query->where('user_id', $user->id);
+        }]);
 
         $user = $request->user()->load('telegram');
 
@@ -39,6 +54,8 @@ class AdvertisementController
         }
 
         $advertisements = $advertisementsBuilder->paginate(5);
+
+        //dd($advertisements);
 
         return view('advertisements', compact(['advertisements', 'chatId']));
     }
