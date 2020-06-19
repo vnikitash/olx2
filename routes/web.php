@@ -45,3 +45,4 @@ Route::get('adv', function (\Illuminate\Http\Request $request, \App\Services\Tel
 });
 
 Route::post("subscribe", "TelegramController@subscribe");
+Route::get('conversations', 'MessageController@conversations');

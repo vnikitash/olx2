@@ -10928,3 +10928,15 @@ a.text-dark:focus {
   }
 }
 
+.message_left {
+  padding: 10px;
+  background-color: #dfdfff;
+  border-radius: 14px;
+}
+
+.message_right {
+  padding: 10px;
+  background-color: #ffffa9;
+  border-radius: 14px;
+}
+
